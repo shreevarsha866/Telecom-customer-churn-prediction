@@ -27,26 +27,40 @@ In telecom, acquiring a new customer costs 5 to 10 times more than retaining one
 <img width="761" height="360" alt="image" src="https://github.com/user-attachments/assets/ddae4709-522a-4680-8b26-3b13edaf9864" />
 
 
-Stage 1 — SQL Server ETL Pipeline
+**Stage 1 — SQL Server ETL Pipeline**
+
 Raw data was processed through a structured ETL pipeline before any ML work.
-CSV File  →  Staging Table  →  Transformation  →  Final Table  →  Analytics Views
+
+**CSV File  →  Staging Table  →  Transformation  →  Final Table  →  Analytics Views**
+
 Steps performed in SQL Server (SSMS):
 
-Created staging and final schema tables
-Loaded raw CSV via flat file import
-Applied data transformations and quality checks
-Built analytical views for churn rate by contract type
-Output: clean, analysis-ready dataset passed into Python
+- Created staging and final schema tables
+- Loaded raw CSV via flat file import
+- Applied data transformations and quality checks
+- Built analytical views for churn rate by contract type
+- **Output: clean, analysis-ready dataset passed into Python**
 
 
-Stage 2 — Exploratory Data Analysis
-Dataset: 7,043 customers. Churn rate: 26.54%. Moderate class imbalance — ROC-AUC prioritized over accuracy.
-Key FindingInsightContract typeMonth-to-Month customers churn far more than 1-year or 2-year holdersTenureChurned customers have significantly lower average tenurePayment methodElectronic check users churn at the highest rateMonthly chargesChurned avg $75/month vs Stayed avg $63/monthSenior citizensAround 16% of base — distinct behavioral segment
+**Stage 2 — Exploratory Data Analysis**
+- Dataset: 7,043 customers.
+- Churn rate: 26.54%.
+- Moderate class imbalance — ROC-AUC prioritized over accuracy.
 
-Stage 3 — Machine Learning Pipeline
-Preprocessing Steps
-StepMethodTarget encodingChurn: Yes = 1, No = 0Dropped columncustomerID (not predictive)TotalCharges fixConverted to numeric, 11 NaN rows droppedCategorical encodingpd.get_dummies() with drop_first=TrueFeature scalingStandardScaler — fit on train, transform on testTrain/test split80/20, random_state=42, stratify=y
-Models Trained
+  **Key Finding Insight:**
+- Contract type Month-to-Month customers churn far more than 1-year or 2-year holders
+- TenureChurned customers have significantly lower average tenurePayment method Electronic check users churn at the highest rate
+- Monthly charges Churned avg $75/month vs Stayed avg $63/month
+- Senior citizensAround 16% of base — distinct behavioral segment
+
+**Stage 3 — Machine Learning Pipeline** - Preprocessing Steps
+- Step Method Target encoding Churn: Yes = 1, No = 0
+- Dropped columncustomerID (not predictive)
+- TotalCharges fixConverted to numeric, 11 NaN rows dropped
+- Categorical encodingpd.get_dummies() with drop_first=True
+- Feature scaling StandardScaler — fit on train, transform on testTrain/test split80/20, random_state=42, stratify=y
+
+**Models Trained**
 python# Logistic Regression
 LogisticRegression(max_iter=1000)
 
@@ -58,17 +72,19 @@ pythonparam_grid = {
     'C': [0.01, 0.1, 0.5, 1, 5, 10],
     'penalty': ['l2']
 }
-Model Comparison
-ModelROC-AUCNotesLogistic Regression (baseline)0.835Strong interpretable baselineRandom Forest0.819Higher complexity, lower AUCLogistic Regression (tuned)0.835Final model selected
-Final model: Tuned Logistic Regression. Decision threshold adjusted to 0.4 to improve churn recall to 57%.
 
-Saved Model Artifacts
+**Model Comparison**
+- ModelROC-AUC Notes Logistic Regression (baseline)0.835 Strong interpretable baselineRandom Forest0.819Higher complexity, lower AUCLogistic Regression (tuned)0.835Final model selected
+- Final model: Tuned Logistic Regression. Decision threshold adjusted to 0.4 to improve churn recall to 57%.
+
+**Saved Model Artifacts**
 Three files saved with joblib:
-LogisticRegression.pkl       — FINAL prediction model
-RandomForestClassifier.pkl   — feature importance reference
-scaler.pkl                   — StandardScaler (required for Logistic Regression)
-Load and predict on new data:
-pythonimport joblib
+
+- LogisticRegression.pkl       — FINAL prediction model
+- RandomForestClassifier.pkl   — feature importance reference
+- scaler.pkl                   — StandardScaler (required for Logistic Regression)
+
+Load and predict on new data: pythonimport joblib
 
 model  = joblib.load("LogisticRegression.pkl")
 scaler = joblib.load("scaler.pkl")
