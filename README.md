@@ -22,16 +22,16 @@ In telecom, acquiring a new customer costs 5 to 10 times more than retaining one
 5.Saved model artifacts — .pkl files ready for deployment or inference on new customers
 
 
-Telecom-customer-churn-prediction/
-├── Telcom_Customer_churn.ipynb       # Full ML pipeline notebook
-├── RandomForestClassifier.pkl        # Saved Random Forest model
-├── LogisticRegression.pkl            # Saved Logistic Regression model (FINAL)
-├── scaler.pkl                        # Fitted StandardScaler
-├── churn_prediction_data.csv         # Cleaned and processed output dataset
-├── sql/
-│   └── etl_pipeline.sql              # SQL Server ETL pipeline
-├── Report_BI.pbix                    # Interactive Power BI dashboard
-└── README.md
+**Telecom-customer-churn-prediction**
+-Telcom_Customer_churn.ipynb       # Full ML pipeline notebook
+-RandomForestClassifier.pkl        # Saved Random Forest model
+-LogisticRegression.pkl            # Saved Logistic Regression model (FINAL)
+-scaler.pkl                        # Fitted StandardScaler
+-churn_prediction_data.csv         # Cleaned and processed output dataset
+-sql/
+    -etl_pipeline.sql              # SQL Server ETL pipeline
+-Report_BI.pbix                    # Interactive Power BI dashboard
+-README.md
 
 Stage 1 — SQL Server ETL Pipeline
 Raw data was processed through a structured ETL pipeline before any ML work.
