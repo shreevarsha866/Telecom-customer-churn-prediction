@@ -6,9 +6,11 @@
   <img src="https://img.shields.io/badge/SQL%20Server-ETL-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white"/>
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge"/>
 </p>
+
 Predict which telecom customers are about to leave — a full end-to-end pipeline from SQL ETL to Python ML to Power BI dashboard that turns churn risk into actionable retention strategy.
 
-**1. Problem Statement**
+
+**Problem Statement**
 In telecom, acquiring a new customer costs 5 to 10 times more than retaining one. With a 26.54% churn rate across 7,043 customers, identifying at-risk customers before they leave is a critical business need. This project delivers a complete predictive solution from raw data ingestion to stakeholder-ready dashboards.
 
 **What This Project Does**
@@ -20,7 +22,6 @@ In telecom, acquiring a new customer costs 5 to 10 times more than retaining one
 5.Saved model artifacts — .pkl files ready for deployment or inference on new customers
 
 
-Project Structure
 Telecom-customer-churn-prediction/
 ├── Telcom_Customer_churn.ipynb       # Full ML pipeline notebook
 ├── RandomForestClassifier.pkl        # Saved Random Forest model
@@ -31,7 +32,6 @@ Telecom-customer-churn-prediction/
 │   └── etl_pipeline.sql              # SQL Server ETL pipeline
 ├── Report_BI.pbix                    # Interactive Power BI dashboard
 └── README.md
-Source dataset: WA_Fn-UseC_-Telco-Customer-Churn.csv — IBM Telco, 7,043 rows, 21 features
 
 Stage 1 — SQL Server ETL Pipeline
 Raw data was processed through a structured ETL pipeline before any ML work.
