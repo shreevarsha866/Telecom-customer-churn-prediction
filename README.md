@@ -1,6 +1,6 @@
 # 📊 Telecom Customer Churn Analysis & Prediction
 
-**End-to-End Data Analytics & Machine Learning Project**
+End-to-End Data Analytics & Machine Learning Project
 
 ## Project Overview
 
