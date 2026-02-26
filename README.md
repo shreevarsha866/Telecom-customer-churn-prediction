@@ -1,4 +1,4 @@
-Telecom Customer Churn Prediction
+                                          **Telecom Customer Churn Prediction**
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
