@@ -14,7 +14,12 @@
 In telecom, acquiring a new customer costs 5–10× more than retaining one. With a 26.54% churn rate across 7,043 customers, identifying at-risk customers before they leave is a critical business need. This project delivers a complete predictive solution — from raw data ingestion to stakeholder-ready dashboards.
 
 🚀 What This Project Does
-FeatureDescription🗄️SQL Server ETLStages, transforms, and curates raw CSV data for analysis🔍Exploratory Data AnalysisUncovers churn drivers across contract type, tenure, payment method🤖ML ModelingLogistic Regression vs Random Forest with hyperparameter tuning📊Power BI DashboardKPI cards, geographic churn map, revenue and category analysis💾Saved Model Artifacts.pkl files ready for deployment or inference on new customers
+FeatureDescription:
+🗄️SQL Server ETLStages, transforms, and curates raw CSV data for analysis
+🔍Exploratory Data Analysis - Uncovers churn drivers across contract type, tenure, payment method
+🤖ML ModelingLogistic Regression vs Random Forest with hyperparameter tuning
+📊Power BI DashboardKPI cards, geographic churn map, revenue and category analysis
+💾Saved Model Artifacts.pkl files ready for deployment or inference on new customers
 
 📁 Project Structure
 Telecom-customer-churn-prediction/
