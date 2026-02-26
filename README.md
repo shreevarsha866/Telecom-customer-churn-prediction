@@ -22,6 +22,8 @@ In telecom, acquiring a new customer costs 5 to 10 times more than retaining one
 5.Saved model artifacts — .pkl files ready for deployment or inference on new customers
 
 **Project Structure**
+
+
 <img width="761" height="360" alt="image" src="https://github.com/user-attachments/assets/ddae4709-522a-4680-8b26-3b13edaf9864" />
 
 
