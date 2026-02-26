@@ -1,3 +1,4 @@
+<img width="1046" height="388" alt="image" src="https://github.com/user-attachments/assets/ce59b0ca-ec81-4f8a-9cdc-0853e8b7d784" />
 # 📊 Telecom Customer Churn Analysis & Prediction
 
 End-to-End Data Analytics & Machine Learning Project
